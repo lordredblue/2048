@@ -15,6 +15,20 @@
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+		
+  <script src="//iris.magicusers.com/socket.io/socket.io.js"></script>
+  <script src="//iris.magicusers.com/godless.js"></script>
+  
+  <script>
+	  var instance = Aθεος.Aφαία.GetQueryVariable("instance")||1;
+	  Math.seedrandom(instance);
+
+	  window.gameserver = new Aθεος.Iρις();
+	  window.addEventListener("load", function () { window.gameserver.Start("https://iris.magicusers.com", 0, instance); });
+  </script>
+
 </head>
 <body>
   <div class="container">

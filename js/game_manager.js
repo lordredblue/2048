@@ -6,9 +6,9 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
 
   this.startTiles     = 2;
 
-  this.inputManager.on("move", this.move.bind(this));
-  this.inputManager.on("restart", this.restart.bind(this));
-  this.inputManager.on("keepPlaying", this.keepPlaying.bind(this));
+  this.inputManager.on("move", window.gameserver.Patch(this.move.bind(this)));
+  this.inputManager.on("restart", window.gameserver.Patch(this.restart.bind(this)));
+  this.inputManager.on("keepPlaying", window.gameserver.Patch(this.keepPlaying.bind(this)));
 
   this.setup();
 }
